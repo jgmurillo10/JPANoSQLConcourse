@@ -44,8 +44,12 @@ public class CompetitionLogic implements ICompetitionLogic{
 
     @Override
     public CompetitionDTO add(CompetitionDTO dto) {
+        if(dto.getId()==null){
+            dto.setId(UUID.randomUUID().toString());
+         }
         CompetitionDTO result = CONVERTER.entityToDto(persistence.add(CONVERTER.dtoToEntity(dto)));
         return result;
+    
     }
 
     @Override
@@ -73,5 +77,6 @@ public class CompetitionLogic implements ICompetitionLogic{
     public Boolean delete(CompetitionDTO dto) {
         return persistence.delete(CONVERTER.dtoToEntity(dto));
     }
+    
     
 }

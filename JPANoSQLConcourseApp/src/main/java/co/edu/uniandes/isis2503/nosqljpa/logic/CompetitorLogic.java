@@ -39,11 +39,15 @@ public class CompetitorLogic implements ICompetitorLogic {
     private final CompetitorPersistence persistence;
 
     public CompetitorLogic() {
+        
         this.persistence = new CompetitorPersistence();
     }
 
     @Override
     public CompetitorDTO add(CompetitorDTO dto) {
+        if(dto.getId()==null){
+            dto.setId(UUID.randomUUID().toString());
+         }
         CompetitorDTO result = CONVERTER.entityToDto(persistence.add(CONVERTER.dtoToEntity(dto)));
         return result;
     }
@@ -78,4 +82,6 @@ public class CompetitorLogic implements ICompetitorLogic {
     public Boolean delete(CompetitorDTO dto) {
         return persistence.delete(CONVERTER.dtoToEntity(dto));
     }
+
+    
 }

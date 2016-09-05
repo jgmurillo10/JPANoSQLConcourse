@@ -35,9 +35,10 @@ import javax.persistence.Table;
  *
  * @author Luis Felipe Mendivelso Osorio <lf.mendivelso10@uniandes.edu.co>
  */
-
+@Entity
+@Table(name = "COMPETITION")
 public class CompetitionEntity implements Serializable{
-
+ 
     @Id
     private String id;
     private String name;
