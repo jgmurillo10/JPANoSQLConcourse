@@ -87,7 +87,7 @@
         </dependency>
         
         
-        <!-- ##### JPA Poliglota Kundera -->
+            <!-- ##### JPA Poliglota Kundera -->
         <dependency>
             <groupId>com.impetus.kundera.client</groupId>
             <artifactId>kundera-cassandra-ds-driver</artifactId>
@@ -103,7 +103,6 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>4.1.7.Final</version>
         </dependency>
-        
         
     </dependencies>
 
